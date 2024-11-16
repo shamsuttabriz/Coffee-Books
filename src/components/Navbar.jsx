@@ -1,15 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const links = (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/coffees">Coffees</Link>
-      <Link to="/dashboard">Dashboard</Link>
+      <NavLink
+        className={({ isActive }) =>
+          `font-bold ${
+            isActive ? "text-warning" : "hover:text-warning duration-150"
+          }`
+        }
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `font-bold ${
+            isActive ? "text-warning" : "hover:text-warning duration-150"
+          }`
+        }
+        to="/coffees"
+      >
+        Coffees
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `font-bold ${
+            isActive ? "text-warning" : "hover:text-warning duration-150"
+          }`
+        }
+        to="/dashboard"
+      >
+        Dashboard
+      </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar backdrop-blur-xl bg-white/30 z-50 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

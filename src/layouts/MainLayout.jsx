@@ -6,7 +6,9 @@ export default function MainLayout() {
   return (
     <div>
       {/* Navbar */}
-      <Navbar />
+      <div className="h-14">
+        <Navbar />
+      </div>
       <div className="min-h-[calc(100vh-246px)] py-4 container mx-auto">
         {/* Dynamic Section */}
         <Outlet />
