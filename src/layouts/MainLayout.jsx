@@ -9,7 +9,7 @@ export default function MainLayout() {
       <div className="h-14">
         <Navbar />
       </div>
-      <div className="min-h-[calc(100vh-246px)] py-4 container mx-auto">
+      <div className="min-h-[calc(100vh-246px)] py-4 container mx-auto px-4">
         {/* Dynamic Section */}
         <Outlet />
       </div>

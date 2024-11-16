@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Categories({ categories }) {
   return (
-    <div role="tablist" className="tabs tabs-lifted mb-5">
+    <div role="tablist" className="tabs tabs-lifted mb-16 lg:mb-5">
       {categories.map((category) => (
         <NavLink
           key={category.category}
