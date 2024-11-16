@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import CoffeeCard from "./CoffeeCard";
 
 export default function CoffeeCards() {
   const [coffees, setCoffees] = useState([]);
+
   const data = useLoaderData();
   const { category } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (category) {
@@ -14,14 +16,22 @@ export default function CoffeeCards() {
       );
       setCoffees(filteredByCategory);
     } else {
-      setCoffees(data);
+      setCoffees(data.slice(0, 6));
     }
   }, [category, data]);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {coffees.map((coffee) => (
-        <CoffeeCard key={coffee.id} coffee={coffee} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {coffees.map((coffee) => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
+        ))}
+      </div>
+      <button
+        onClick={() => navigate("/coffees")}
+        className="btn-sm btn bg-success mt-4"
+      >
+        View All
+      </button>
+    </>
   );
 }
