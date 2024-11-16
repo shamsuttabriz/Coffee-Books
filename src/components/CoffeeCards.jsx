@@ -26,12 +26,14 @@ export default function CoffeeCards() {
           <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </div>
-      <button
-        onClick={() => navigate("/coffees")}
-        className="btn-sm btn bg-success mt-4"
-      >
-        View All
-      </button>
+      <div className="text-center">
+        <button
+          onClick={() => navigate("/coffees")}
+          className="btn-md btn bg-warning"
+        >
+          View All
+        </button>
+      </div>
     </>
   );
 }

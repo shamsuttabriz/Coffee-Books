@@ -9,9 +9,11 @@ export default function Coffees() {
 
   const handleSort = (sortType) => {
     if (sortType === "popularity") {
-      console.log(sortType);
+      const sorted = [...data].sort((a, b) => b.popularity - a.popularity);
+      setCoffees(sorted);
     } else if (sortType === "rating") {
-      console.log(sortType);
+      const sorted = [...data].sort((a, b) => b.rating - a.rating);
+      setCoffees(sorted);
     }
   };
 
@@ -24,7 +26,7 @@ export default function Coffees() {
         <div className="flex gap-5 items-center">
           <button
             onClick={() => handleSort("popularity")}
-            className="flex gap-1 items-center bg-warning px-4 py-2 rounded-lg font-medium cursor-pointer"
+            className="flex gap-1 items-center bg-warning hover:bg-yellow-500 px-4 py-2 rounded-lg font-medium cursor-pointer duration-200"
           >
             <span>Sort By Popularity</span>
             <span>
@@ -33,7 +35,7 @@ export default function Coffees() {
           </button>
           <button
             onClick={() => handleSort("rating")}
-            className="flex gap-1 items-center bg-warning px-4 py-2 rounded-lg font-medium cursor-pointer"
+            className="flex gap-1 items-center bg-warning hover:bg-yellow-500 px-4 py-2 rounded-lg font-medium cursor-pointer duration-200"
           >
             <span>Sort By Rating</span>
             <span>
@@ -43,7 +45,7 @@ export default function Coffees() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6">
-        {data.map((coffee) => (
+        {coffees.map((coffee) => (
           <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </div>

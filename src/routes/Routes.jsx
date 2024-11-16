@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import CoffeeCards from "../components/CoffeeCards";
 import MainLayout from "../layouts/MainLayout";
+import CoffeeDetails from "../pages/CoffeeDetails";
 import Coffees from "../pages/Coffees";
 import Dashboard from "../pages/Dashboard";
 import ErrorPage from "../pages/ErrorPage";
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/coffees",
         element: <Coffees />,
+        loader: () => fetch("../coffees.json"),
+      },
+      {
+        path: "/coffee/:id",
+        element: <CoffeeDetails />,
         loader: () => fetch("../coffees.json"),
       },
       {

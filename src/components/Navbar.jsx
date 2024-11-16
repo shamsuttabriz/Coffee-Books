@@ -36,7 +36,7 @@ export default function Navbar() {
     </>
   );
   return (
-    <div className="navbar backdrop-blur-xl bg-white/30 z-50 fixed">
+    <div className="navbar backdrop-blur-xl bg-white/30 z-50 fixed px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ export default function Navbar() {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-xl font-bold ml-4">
+        <Link to="/" className="text-xl font-bold">
           CoffeeBooks
         </Link>
       </div>
