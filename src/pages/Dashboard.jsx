@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import CoffeeCard from "../components/CoffeeCard";
 import Heading from "../components/Heading";
 import { getAllFavorites, removeCoffee } from "../utils";
@@ -15,6 +16,7 @@ export default function Dashboard() {
     removeCoffee(id);
     const favorites = getAllFavorites();
     setCoffees(favorites);
+    toast.success("Coffee removed successfully");
   };
 
   console.log(coffees);
