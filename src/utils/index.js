@@ -32,7 +32,13 @@ const addFavorite = coffee => {
 }
 
 // Remove a coffee form local storage
+const removeCoffee = (id) => {
+    const allCoffees = getAllFavorites();
+    const remaining = allCoffees.filter(coffee => coffee.id !== id);
+    const favorites = getAllFavorites();
+    localStorage.setItem('favorite', JSON.stringify(remaining));
+}
 
 
-export { addFavorite, getAllFavorites };
+export { addFavorite, getAllFavorites, removeCoffee };
 

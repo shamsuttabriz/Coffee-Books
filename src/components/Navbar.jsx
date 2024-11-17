@@ -57,7 +57,7 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content  backdrop-blur-xl bg-white/60 rounded-box z-[1] mt-3 w-52 pl-8 text-lg font-medium py-4 shadow gap-2"
+            className="menu menu-sm dropdown-content  backdrop-blur-xl bg-white/80 rounded-box z-[1] mt-3 w-52 pl-8 text-lg font-medium py-4 shadow gap-2"
           >
             {links}
           </ul>

@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { IoTrash } from "react-icons/io5";
+import { Link, useLocation } from "react-router-dom";
 
-export default function CoffeeCard({ coffee }) {
+export default function CoffeeCard({ coffee, handleRemoveCoffee }) {
   const {
     category,
     description,
@@ -12,6 +13,8 @@ export default function CoffeeCard({ coffee }) {
     rating,
     type,
   } = coffee || {};
+
+  const { pathname } = useLocation();
 
   return (
     <div className="flex relative">
@@ -31,6 +34,16 @@ export default function CoffeeCard({ coffee }) {
           <p>Popularity: {popularity}</p>
         </div>
       </Link>
+      {pathname === "/dashboard" && (
+        <div className="absolute bg-warning rounded-full -top-5 -right-5">
+          <button
+            onClick={() => handleRemoveCoffee(id)}
+            className="text-xl p-4"
+          >
+            <IoTrash />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
