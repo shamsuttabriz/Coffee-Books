@@ -1,4 +1,6 @@
+import { Toaster } from "react-hot-toast";
 import { Outlet } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -15,6 +17,7 @@ export default function MainLayout() {
       </div>
       {/* Footer */}
       <Footer />
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaSortAmountDown } from "react-icons/fa";
+import { FaSortAmountDown, FaSortAmountDownAlt } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import CoffeeCard from "../components/CoffeeCard";
 
@@ -12,7 +12,7 @@ export default function Coffees() {
       const sorted = [...data].sort((a, b) => b.popularity - a.popularity);
       setCoffees(sorted);
     } else if (sortType === "rating") {
-      const sorted = [...data].sort((a, b) => b.rating - a.rating);
+      const sorted = [...data].sort((a, b) => a.rating - b.rating);
       setCoffees(sorted);
     }
   };
@@ -39,7 +39,7 @@ export default function Coffees() {
           >
             <span>Sort By Rating</span>
             <span>
-              <FaSortAmountDown />
+              <FaSortAmountDownAlt />
             </span>
           </button>
         </div>

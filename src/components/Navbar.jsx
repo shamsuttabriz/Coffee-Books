@@ -36,7 +36,7 @@ export default function Navbar() {
     </>
   );
   return (
-    <div className="navbar backdrop-blur-xl bg-white/30 z-50 fixed px-12">
+    <div className="navbar backdrop-blur-xl bg-white/30 z-50 fixed lg:px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +57,7 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-gray-200 rounded-box z-[1] mt-3 w-52 pl-8 text-lg font-medium py-4 shadow gap-2"
+            className="menu menu-sm dropdown-content  backdrop-blur-xl bg-white/60 rounded-box z-[1] mt-3 w-52 pl-8 text-lg font-medium py-4 shadow gap-2"
           >
             {links}
           </ul>
@@ -66,7 +66,7 @@ export default function Navbar() {
           CoffeeBooks
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex ">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8 text-lg font-medium">
           {links}
         </ul>
